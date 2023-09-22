@@ -1,0 +1,164 @@
+ERROR - 2023-09-22 16:09:27 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'products' in C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'products', 3306, '', 0)
+#1 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\LabActivity\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\LabActivity\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\LabActivity\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\LabActivity\app\Controllers\ProductController.php(60): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\LabActivity\system\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+#8 C:\laragon\www\LabActivity\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#9 C:\laragon\www\LabActivity\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\LabActivity\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\LabActivity\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'products' in C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\LabActivity\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\LabActivity\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\LabActivity\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\LabActivity\app\Controllers\ProductController.php(60): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\LabActivity\system\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+#7 C:\laragon\www\LabActivity\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#8 C:\laragon\www\LabActivity\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\LabActivity\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\LabActivity\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-09-22 16:09:27 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'products'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `table_products`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ProductController.php(60): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
+ERROR - 2023-09-22 16:26:45 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`crud_simp`.`table_products`, CONSTRAINT `table_products_ibfk_1` FOREIGN KEY (`ProductCategory`) REFERENCES `table_category` (`CategoryID`)) in C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ta...', 0)
+#1 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ta...')
+#2 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ta...')
+#3 C:\laragon\www\LabActivity\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ta...', Array, false)
+#4 C:\laragon\www\LabActivity\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\LabActivity\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\LabActivity\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\LabActivity\app\Controllers\ProductController.php(48): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\LabActivity\system\CodeIgniter.php(919): App\Controllers\ProductController->save()
+#9 C:\laragon\www\LabActivity\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\laragon\www\LabActivity\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\LabActivity\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\LabActivity\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-22 16:26:45 --> Cannot add or update a child row: a foreign key constraint fails (`crud_simp`.`table_products`, CONSTRAINT `table_products_ibfk_1` FOREIGN KEY (`ProductCategory`) REFERENCES `table_category` (`CategoryID`))
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `table_products` (`ProductName`, `ProductDescription`, `ProductCategory`, `ProductQuantity`, `ProductPrice`) VALUES (:ProductName:, :ProductDescription:, :ProductCategory:, :ProductQuantity:, :ProductPrice:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ProductController.php(48): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
+CRITICAL - 2023-09-22 16:38:11 --> Undefined array key "id"
+in APPPATH\Views\products.php on line 65.
+ 1 APPPATH\Views\products.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\LabActivity\\app\\Views\\products.php', 65)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LabActivity\\app\\Views\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 5 APPPATH\Controllers\ProductController.php(61): view('products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
+CRITICAL - 2023-09-22 16:46:48 --> Undefined array key "id"
+in APPPATH\Views\products.php on line 65.
+ 1 APPPATH\Views\products.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\LabActivity\\app\\Views\\products.php', 65)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LabActivity\\app\\Views\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 5 APPPATH\Controllers\ProductController.php(61): view('products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
+CRITICAL - 2023-09-22 16:47:04 --> Undefined array key "id"
+in APPPATH\Views\products.php on line 65.
+ 1 APPPATH\Views\products.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\LabActivity\\app\\Views\\products.php', 65)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LabActivity\\app\\Views\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 5 APPPATH\Controllers\ProductController.php(61): view('products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
+ERROR - 2023-09-22 16:58:23 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'lab1_crud' in C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'lab1_crud', 3306, '', 0)
+#1 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\LabActivity\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\LabActivity\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\LabActivity\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\LabActivity\app\Controllers\ProductController.php(60): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\LabActivity\system\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+#8 C:\laragon\www\LabActivity\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#9 C:\laragon\www\LabActivity\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\LabActivity\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\LabActivity\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'lab1_crud' in C:\laragon\www\LabActivity\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\LabActivity\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\LabActivity\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\LabActivity\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\LabActivity\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\LabActivity\app\Controllers\ProductController.php(60): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\LabActivity\system\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+#7 C:\laragon\www\LabActivity\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#8 C:\laragon\www\LabActivity\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\LabActivity\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\LabActivity\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-09-22 16:58:23 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'lab1_crud'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `table_products`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ProductController.php(60): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
+CRITICAL - 2023-09-22 17:03:15 --> Undefined array key "id"
+in APPPATH\Views\products.php on line 65.
+ 1 APPPATH\Views\products.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\laragon\\www\\LabActivity\\app\\Views\\products.php', 65)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LabActivity\\app\\Views\\products.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 5 APPPATH\Controllers\ProductController.php(61): view('products', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\ProductController->Stephen()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LabActivity\\public\\index.php')
